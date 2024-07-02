@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fa">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <link rel="stylesheet" href="css/fontawesome.css">
+        <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"> -->
+        <title>صفحه اصلی</title>
+        <link rel="stylesheet" href="css/index-1.css">
+        <link href="css/style.css" rel="stylesheet">
+        <style>
+            .correct { color: green; font-weight: bold; }
+            .incorrect { color: red; font-weight: bold; }
+            .highlighted { background-color: #f0f0f0; }
+            .disabled { opacity: 0.5; pointer-events: none; }
+        </style>
+    </head>
+    <body>
+        <div class="container" id="container">
+            <div id="tutorialModal" class="modal">
+                <div class="modal-content" style="background-color: #ffffff;">
+                    <h1 style="font-size: 21px;">آموزش بازی</h1>
+                    <h1 style="margin-bottom: 10px;"> مرحله اول : </h1>
+                    <p>به نظر شما شخص الف پول هارو چطوری تقسیم می کند</p>
+                    <button id="confirmButton" class="conferm">تأیید</button>
+                </div>
+            </div>
+            <div id="tutorialModal2" class="modal1">
+                <div class="modal-content1">
+                    <h1 style="margin-bottom: 10px;"> مرحله دوم : </h1>
+                    <p>بعد از انتخاب گزینه روی دکمه تایید کلیک کنید</p>
+                    <button id="confirmButton2" class="conferm">تأیید</button>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>انتخاب</th>
+                        <!-- <th>گزینه</th> -->
+                        <th>پول برای شخص الف</th>
+                        <th>پول شما </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="radio" id="option1" name="option" onchange="enableNextButton(),highlightRow(this)">
+                        </td>
+                        <!-- <td>
+                            <label for="option1">گزینه 1</label>
+                        </td> -->
+                        <td>80</td>
+                        <td>80</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="radio" id="option2" name="option" onchange="enableNextButton(),highlightRow(this)">
+                        </td>
+                        <!-- <td>
+                            <label for="option2">گزینه 2</label>
+                        </td> -->
+                        <td>90</td>
+                        <td>60</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="nextButton" disabled>تایید</button>
+        </div>
+    </body>
+    <script>
+// انتخاب تصادفی یک ردیف صحیح و یک ردیف غلط
+function markRandomCorrectOrIncorrect() {
+    const rows = document.querySelectorAll('tbody tr');
+    const correctIndex = Math.floor(Math.random() * rows.length);
+    
+    rows.forEach((row, index) => {
+        if (index === correctIndex) {
+            row.classList.add('correct');
+            row.classList.remove('incorrect');
+        } else {
+            row.classList.add('incorrect');
+            row.classList.remove('correct');
+        }
+    });
+}
+
+// برای دکمه تایید
+document.getElementById('nextButton').addEventListener('click', function() {
+    markRandomCorrectOrIncorrect();
+    this.disabled = true; // غیرفعال کردن دکمه پس از کلیک
+    setTimeout(() => {
+        window.location.href = "trial-1.html"; // مسیر صفحه بعدی
+    }, 3000);
+});
+
+// فعال کردن دکمه بعدی و هایلایت کردن ردیف
+function enableNextButton() {
+    document.getElementById('nextButton').disabled = false;
+}
+
+function highlightRow(radio) {
+    const rows = document.querySelectorAll('tbody tr');
+    rows.forEach(row => {
+        row.classList.remove('highlighted');
+    });
+    radio.closest('tr').classList.add('highlighted');
+}
+
+var modal = document.getElementById("tutorialModal");
+
+window.onload = function() {
+    modal.style.display = "block";
+}
+    </script>
+    <script src="Js/Index.js"></script>
+</html>

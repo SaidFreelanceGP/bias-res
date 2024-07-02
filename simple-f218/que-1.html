@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fa">
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<link rel="stylesheet" href="css/fontawesome.css">
+		<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"> -->
+		<title>صفحه اصلی</title>
+		<link rel="stylesheet" href="css/que-01.css">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<h1>به نظر شما هدف  شرکت کننده ی الف چه بود ؟ از بین این سه گزینه انتخاب کنید </h1>
+			<div class="options">
+				<label for="option1">
+					<input type="radio" id="option1" name="option" value="1">
+					<span> پول را بطور مساوی تقسیم کند </span>
+				</label>
+				<label for="option2">
+					<input type="radio" id="option2" name="option" value="2">
+					<span> تا جای ممکن پول بیشتر جمع کند </span>
+				</label>
+				<label for="option3">
+					<input type="radio" id="option3" name="option" value="3">
+					<span> جلوی پول جمع کردن شما را بگیرد </span>
+				</label>
+			</div>
+			<button id="send" onclick="saveData()" type="submit">ارسال</button>
+		</div>
+	</body>
+	<script>
+		document.getElementById('send').addEventListener('click', function() {
+			const options = document.getElementsByName('option');
+			let selectedValue;
+			for (const option of options) {
+				if (option.checked) {
+					selectedValue = option.value;
+					localStorage.setItem('selectedOption1', selectedValue);
+
+				}
+			}
+			if (selectedValue) {
+				localStorage.setItem('selectedOption1', selectedValue);
+			}
+			console.log(selectedValue)
+			window.location.href = "text-1.html"; // مسیر صفحه جدید شما
+		});
+	</script>
+	<script src="Js/Index.js"></script>
+</html>

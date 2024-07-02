@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fa">
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<link rel="stylesheet" href="css/fontawesome.css">
+		<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"> -->
+		<title>صفحه اصلی</title>
+		<link rel="stylesheet" href="css/index-1.css">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<p style="text-align: right;">
+				شخص الف در گردونه ی شانس مبلغی پول برده است ؛
+				
+				 شرط برداشت پول این است که :
+				
+				 باید هر بار بخشی از پول را طبق گزینه هایی که در دسترسش قرار داده شده بین خودش و شما تقسیم کند!
+
+				  و در آخر میتواند مجموع آن  مبلغ پولی را که هر بار به خودش اختصاص داده است برداشت کند
+				
+				در این بخش سعی کنید هر بار نحوه ی تقسیم پول توسط شرکت کننده ی الف را حدس بزنید.
+
+				از بین حدس های درست شما هم یکی به قرعه انتخاب شده و مبلغ آن به شما پرداخت میشود پس در حدس های خود دقت کنید!
+
+				در صورت متوجه شدن توضیحات دکمه ی شروع را فشار دهید
+			</p>
+			<button type="button" id="nextButton">شروع</button>
+		</div>
+	</body>
+	<script>
+		document.getElementById('nextButton').addEventListener('click', function() {
+			getRandomPair()
+
+			window.location.href = "tutarial-option.html"; // مسیر صفحه جدید شما
+		});
+		var dataType;
+		var dataTypeSet = false; // متغیر فلگ برای نشان دادن اینکه نوع داده یک بار تنظیم شده است یا نه
+
+		function getRandomPair() {
+			if (!dataTypeSet) {
+				if (Math.random() < 0.5) {
+					dataType = 'individual';
+				} else {
+					dataType = 'Prosocial';
+				}
+				localStorage.setItem('dataType', dataType);
+				dataTypeSet = true; // به‌روزرسانی فلگ پس از تنظیم نوع داده
+			} else {
+				dataType = localStorage.getItem('dataType');
+			}
+		}
+
+	</script>
+	<script src="Js/Index.js"></script>
+</html>

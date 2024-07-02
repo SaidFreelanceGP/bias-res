@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fa">
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<link rel="stylesheet" href="css/fontawesome.css">
+		<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"> -->
+		<title>صفحه اصلی</title>
+		<link rel="stylesheet" href="css/index-1.css">
+		<link href="css/style.css" rel="stylesheet">
+		<style>
+			.disp{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container" id="container-f">
+			<h2 class="noti" style="font-weight: bold; margin-bottom: 25px;">بازی تمام شد برای ثبت نتایج لطفا روی گزینه تایید کلیک کنید</h2>
+			<button id="nextButton" onclick="saveData3()">تایید</button>
+			</div>
+			<div class="container disp" id="container-ff">
+				<h2 class="noti" style="font-weight: bold; margin-bottom: 25px;">ممنون از همکاری شما</h2>
+			</div>
+		</body>
+	<script>
+		// برای دکمه تایید
+document.getElementById('nextButton').addEventListener('click', function() {
+	document.getElementById('container-f').classList.add('disp');
+	document.getElementById('container-ff').classList.remove('disp');
+	// window.location.href = "agency.html"; // مسیر صفحه جدید شما
+
+});
+	</script>
+        <script src="Js/Index.js"></script>
+	<script src="Js/trial3.js"></script>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <title>صفحه اصلی</title>
+    <link rel="stylesheet" href="css/index-1.css">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .correct { color: green; background-color: whitesmoke; font-weight: bold; }
+        .incorrect { color: red; background-color: #f1f1f1; font-weight: bold; }
+        .highlighted { background-color: #f0f0f0; }
+        .disabled { opacity: 0.5; pointer-events: none; }
+        thead tr th:first-child, tbody tr td:first-child {
+    display: none;
+}
+.count-display{
+    background-color: #bcbaba;
+    border-radius: 145%;
+    text-align: center;
+    color: black;
+    position: relative;
+    top: -33px;
+    left: -660px;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 4px 11px;
+    display: flex;
+    width: 30px;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="tutorialModal_trial2" class="modal" style="display: none;">
+            <div class="modal-content" style="display: none; opacity: 1; margin-top: 200px; margin-left: 60px;">
+                <h1>حدس انتخاب های شرکت کننده ی الف</h1>
+                <p>چگونه فکر می کنید شرکت کننده ی الف پول را تقسیم کرده است؟ حدس خود را انتخاب کنید.</p>
+                <button id="confirmButton_trial2" class="conferm">تأیید</button>
+            </div>
+        </div>
+        <h2 class="noti" style="font-weight: bold; margin-bottom: 25px;">
+            شما در حال مشاهده ی پاسخ های شرکت کننده ی الف درهنگام بازی با با نفر قبل هستید
+        </h2>
+        <table id="optionsTable_trial1">
+            <thead>
+                <tr>
+                    <th>انتخاب</th>
+                    <th>پول برای شخص الف</th>
+                    <th>پول شرکت کننده ی دیگر</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button id="confirmButton_trial1" class="nextButton_trial" onclick="confirmSelection()">بعدی</button>
+        <span id="count-display1" class="count-display"></span>
+
+    </div>
+</body>
+
+<script src="Js/trial2.js"></script>
+<script src="Js/Index.js"></script>
+
+</html>
+
+
+
+

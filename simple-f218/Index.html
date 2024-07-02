@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fa">
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<link rel="stylesheet" href="css/fontawesome.css">
+		<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"> -->
+		<title>صفحه اصلی</title>
+		<link rel="stylesheet" href="css/Index.css">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="page2" class="page">
+			<div class="container dual-container">
+				<div class="form-container">
+					<h3 style="font-weight: bold; font-size: 20px; margin-bottom: 65px;"> با تشکر از شرکت شما در این آزمون </h2>
+						<h2 style="text-align: right; margin-right: 20px; font-weight: normal; font-size: 18px;">ورود</h2>
+						<form id="loginForm">
+							<input required type="email" id="emailInput" name="email" placeholder="example.email@gmail.com">
+							<input required type="text" id="phoneInput" name="phone" placeholder="موبایل خود را وارد کنید">
+							<input required type="text" id="codeInput" name="code" placeholder="کد را وارد کنید">
+							<button type="button" class="btn btn2" id="loginButton">ورود</button>
+						</form>
+				</div>
+				<div class="image-container">
+					<img src="img/login.png" alt="illustration">
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		document.getElementById('loginButton').addEventListener('click', function(event) {
+			event.preventDefault(); // جلوگیری از ارسال فرم به‌طور پیش‌فرض
+			const email = document.getElementById('emailInput').value;
+		    const phone = document.getElementById('phoneInput').value;
+		    const code = document.getElementById('codeInput').value;
+
+		    if (email && phone && code) { // بررسی اینکه تمام فیلدها پر شده باشند
+				localStorage.setItem("emailInput", email);
+				localStorage.setItem("phoneInput", phone);
+				localStorage.setItem("codeInput", code);
+				window.location.href = "text-0.html"; // مسیر صفحه جدید شما
+		    } else {
+		        alert("لطفاً تمام فیلدها را پر کنید.");
+		    }
+		});
+	</script>
+	<script src="Js/Index.js"></script>
+</html>

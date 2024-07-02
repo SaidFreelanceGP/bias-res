@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <title>صفحه اصلی</title>
+    <link rel="stylesheet" href="css/index-1.css">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .correct { color: green; font-weight: bold; }
+        .incorrect { color: red; font-weight: bold; }
+        .highlighted { background-color: #f0f0f0; }
+        .disabled { opacity: 0.5; pointer-events: none; }
+        .option-row {
+    /* cursor: pointer; */
+    transition: background-color 0.3s;
+}
+
+/* .option-row:hover {
+    background-color: #f0f0f0;
+} */
+
+.option-row.selected {
+    background-color: #e0e0e0;
+}
+
+.radio-cell {
+    width: 20px;
+}
+.count-display{
+    background-color: #bcbaba;
+    border-radius: 145%;
+    text-align: center;
+    color: black;
+    position: relative;
+    top: -33.8px;
+    left: -660px;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 4px 11px;
+    display: flex;
+    width: 30px;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="tutorialModal_trial1" class="modal" style="display: none;">
+            <div class="modal-content" style="display: none; opacity: 1; margin-top: 200px; margin-left: 60px;">
+                <h1>حدس انتخاب های شرکت کننده ی دیگر</h1>
+                <p>چگونه فکر می کنید شرکت کننده ی الف پول  را تقسیم کرده است؟ حدس خود را انتخاب کنید.</p>
+                <button id="modalConfirmButton_trial1" class="conferm">تأیید</button>
+            </div>
+        </div>
+        <h2 class="noti" style="margin-bottom: 25px;">بنظر شما شرکت کننده ی الف پول  را چگونه تقسیم میکند حدس خود را انتخاب کنید</h2>
+        <table id="optionsTable_trial1">
+            <thead>
+                <tr>
+                    <th>انتخاب</th>
+                    <th>پول برای شخص الف</th>
+                    <th>پول شما</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button id="confirmButton_trial1" class="nextButton_trial" onclick="confirmSelection()">تأیید</button>
+        <span id="count-display" class="count-display"></span>
+    </div>
+</body>
+    <script src="Js/Index.js"></script>
+    <script src="Js/trial1.js"></script>
+</html>

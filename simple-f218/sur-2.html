@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fa">
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<link rel="stylesheet" href="css/fontawesome.css">
+		<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"> -->
+		<title>صفحه اصلی</title>
+		<link rel="stylesheet" href="css/sur.css">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="survey-form" id="surveyForm">
+			<h2 class="question"> بنظر شما چه مقدار از تصمیمات شرکت کننده ی الف به انگیزه ی افزایش پول خود بود؟ </h2>
+			<form action="#" class="login-form" id="myForm1" method="post" name="myForm1">
+				<div class="scale-container">
+					<span class="scale-label" style="left: 60px;">به هیچ وجه </span>
+					<input class="slider" id="myRange3" max="50" min="0" name="myRange" onclick="updateSelectedValue()" step="1" type="range" value="0">
+					<span class="scale-label" style="right: 90px;">کاملا </span>
+					<!-- <div class="neutral-text1"> خنثی</div> -->
+					<!-- <span class="selector"></span> -->
+				</div>
+			</form>
+			<h2 class="question"> بنظر شما چه مقدار از تصمیمات شرکت کننده ی الف به انگیزه ی پایین آوردن پول شخص دیگر بود؟ </h2>
+			<form method="POST" class="login-form" id="myForm1" name="myForm1" action="#">
+				<div class="scale-container">
+					<span class="scale-label" style="left: 60px;">  به هیچ وجه  </span>
+					<input class="slider" id="myRange4" max="50" min="0" name="myRange" onclick="updateSelectedValue()" step="1" type="range" value="0">
+					<span class="scale-label" style="right: 90px;">کاملا</span>
+					<!-- <div class="neutral-text2"> خنثی</div> -->
+					<!-- <span class="selector"></span> -->
+				</div>
+			</form>
+			<button class="submit-btn" id="submitSurveyBtn" onclick="" type="submit">ارسال نظر</button>
+		</div>
+	</body>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			const slider3 = document.getElementById("myRange3");
+			const slider4 = document.getElementById("myRange4");
+			const faze2 = 'faze2'
+			localStorage.setItem("faze2", faze2);
+        // دریافت مقادیر از localStorage
+  	      const randomSliderValue1 = localStorage.getItem('randomSliderValue1') || Math.floor(Math.random() * 51);
+    	    const randomSliderValue2 = localStorage.getItem('randomSliderValue2') || Math.floor(Math.random() * 51);
+
+
+			slider3.value = randomSliderValue1;
+			slider4.value = randomSliderValue2;			
+			// ذخیره مقادیر رندوم در localStorage
+			localStorage.setItem('randomSliderValue3', slider3.value);
+			localStorage.setItem('randomSliderValue4', slider4.value);
+			
+			// به‌روزرسانی پس‌زمینه اسلایدرها
+			updateSliderBackground(slider3);
+			updateSliderBackground(slider4);
+		});
+
+		document.getElementById('myRange3').addEventListener('input', function() {
+			updateSliderBackground(this);
+		});
+
+		document.getElementById('myRange4').addEventListener('input', function() {
+			updateSliderBackground(this);
+		});
+
+		function updateSliderBackground(slider) {
+			var min = slider.min;
+			var max = slider.max;
+			var value = slider.value;
+			// محاسبه درصد موقعیت
+			var percent = ((value - min) / (max - min)) * 100;
+			
+			// اعمال گرادیان به پس‌زمینه اسلایدر
+			// slider.style.background = `linear-gradient(to right, #4CAF50 0%, #4CAF50 ${percent}%, #ddd ${percent}%, #ddd 100%)`;
+		}
+
+		document.getElementById('submitSurveyBtn').addEventListener('click', function() {
+			const myRange3 = document.getElementById('myRange3').value;
+			const myRange4 = document.getElementById('myRange4').value;
+
+			localStorage.setItem("myRange3", myRange3);
+			localStorage.setItem("myRange4", myRange4);
+			window.location.href = "que-2.html"; // مسیر صفحه جدید شما
+		});
+
+		document.getElementById('myRange3').addEventListener('input', function() {
+			updateSliderBackground(this);
+		});
+
+		document.getElementById('myRange4').addEventListener('input', function() {
+			updateSliderBackground(this);
+		});
+
+		function updateSliderBackground(slider) {
+			var min = slider.min;
+			var max = slider.max;
+			var value = slider.value;
+			// محاسبه درصد موقعیت
+			var percent = ((value - min) / (max - min)) * 100;
+			
+			// اعمال گرادیان به پس‌زمینه اسلایدر
+			// slider.style.background = `linear-gradient(to right, #4CAF50 0%, #4CAF50 ${percent}%, #ddd ${percent}%, #ddd 100%)`;
+		}
+		
+	</script>
+	<script src="Js/Index.js"></script>
+</html>

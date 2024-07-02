@@ -1,0 +1,45 @@
+﻿/**
+*
+*	Name:			IRANSansDN Font
+*	Version:		1.0
+*	Author:			Moslem Ebrahimi (moslemebrahimi.com)
+*	Created on:		Dec 20, 2017
+*	Updated on:		Dec 20, 2017
+*	Website:		http://fontiran.com
+*	Copyright:		Commercial/Proprietary Software
+--------------------------------------------------------------------------------------
+فونت ایران سنس دست نویس یک نرم افزار مالکیتی محسوب می شود. جهت آگاهی از قوانین استفاده از این فونت ها لطفا به وب سایت (فونت ایران دات کام) مراجعه نمایید
+--------------------------------------------------------------------------------------
+IRANSansDN fonts are considered a proprietary software. To gain information about the laws regarding the use of these fonts, please visit www.fontiran.com 
+--------------------------------------------------------------------------------------
+This set of fonts are used in this project under the license: (.....)
+--------------------------------------------------------------------------------------
+*	
+**/
+
+
+@font-face {
+	font-family: iransansdn;
+	font-style: normal;
+	font-weight: bold;
+	src: url('../fonts/ttf/Bidad-Bold.ttf') format('truetype');
+}
+@font-face {
+	font-family: iransansdn;
+	font-style: normal;
+	font-weight: 300;
+	src: url('../fonts/ttf/Bidad-Light.ttf') format('truetype');
+}
+@font-face {
+	font-family: iransansdn;
+	font-style: normal;
+	font-weight: normal;
+	src: url('../fonts/ttf/Bidad-Regular.ttf') format('truetype');
+}
+/* @font-face {
+	font-family: iransansdn;
+	font-style: normal;
+	font-weight: normal;
+	src: url('../fonts/ttf/Bidad-Regular1.ttf') format('truetype');
+} */
+
