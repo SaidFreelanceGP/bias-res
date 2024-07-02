@@ -1,0 +1,223 @@
+body {
+    font-family: iransansdn;
+    background-color: white !important;
+}
+main.main {
+    width: 100%;
+    display: flex;
+    margin-bottom: 25px;
+}
+main.main-1 {
+    width: 70%;
+    text-align: right;
+    padding: 20px;
+}
+main.main-2 {
+    width: 30%;
+    margin-top: 30px;
+}
+main.main-2 img {
+    width: 90%;
+    height: 1150px;
+    text-align: center;
+}
+article {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	*/
+}
+main article img {
+    max-width: 100%;
+    max-height: 100%;
+    width: 60%;
+    height: 55%;
+    display: block;
+    margin: 0px auto;
+    filter: blur(12px);
+}
+main article h2 {
+    margin: 0px;
+    margin-top: 15px;
+    padding: 6px 2px;
+    margin-right: 5px;
+    border-radius: 10px;
+    /* background-color: #f47748;
+	*/
+    display: inline-block;
+    color: rgb(233, 233, 233);
+    color: #000;
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+main article h2:hover {
+    color: #181818;
+    transition: 0.5s;
+}
+.news-text {
+    line-height: 2;
+    text-align: justify;
+    margin: 0px;
+}
+nav.h-menu {
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-bottom: 0px;
+    border-bottom: 1px solid #e6e6e6;
+    display: inline-block;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333333;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.h-menu .h-menu-1 {
+    width: 30%;
+    float: left;
+    padding: 15px 0px;
+    text-align: left;
+    margin-left: 20px;
+}
+.h-menu .h-menu-2 a.btn {
+    padding: 9px 14px;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #f47748;
+}
+.h-menu .h-menu-2 {
+    float: right;
+    text-align: right;
+    width: 60%;
+    margin-right: 15px;
+    padding: 15px 0px;
+}
+.h-menu .h-menu-3 {
+    float: right;
+    display: block;
+    margin-right: 15px;
+    padding-bottom: 18px;
+    width: 60%;
+}
+.h-menu .h-menu-4 {
+    float: left;
+    width: 35%;
+    padding-bottom: 0px;
+    text-align: left;
+}
+.h-menu .h-menu-4 img {
+    display: inline-block;
+    text-align: left;
+    width: 35%;
+    margin-left: 15px;
+    margin-top: -20px;
+}
+.h-menu .h-menu-4 i {
+    border-right: 1px solid black;
+}
+.h-menu li:hover a {
+    color: #f47748;
+    transition: 0.4s;
+}
+footer {
+    background-color: #181818;
+    display: flex;
+}
+nav.f-menu {
+    width: 100%;
+    padding-bottom: 25px;
+}
+nav.f-menu li:hover a {
+    color: #f47748;
+    transition: 0.4s;
+}
+nav.f-menu li:hover i {
+    color: #f47748;
+    transition: 0.4s;
+}
+.news-text {
+    white-space: pre-line;
+}
+nav.f-menu .f-menu-1 {
+    width: 30%;
+    margin-top: 25px;
+    display: block;
+    float: right;
+    margin-right: 50px;
+}
+nav.f-menu .f-menu-1 img {
+    width: 50%;
+    height: 80%;
+}
+nav.f-menu .f-menu-2 {
+    width: 30%;
+    display: block;
+    float: right;
+    margin-top: 25px;
+    margin-left: 100px;
+}
+nav.f-menu .f-menu-2 ul {
+    display: inline-block;
+}
+nav.f-menu .f-menu-2 ul li {
+    display: block;
+    color: #a09f9f;
+}
+nav.f-menu .f-menu-3 {
+    display: block;
+    float: right;
+    color: white;
+    width: 30%;
+    margin-top: 25px;
+}
+nav.f-menu .f-menu-3 h3 {
+    margin-right: 15px;
+    display: inline-block;
+}
+nav.f-menu .f-menu-3 ul li {
+    display: inline-block;
+    color: #a09f9f;
+}
+nav.f-menu .f-menu-3 ul li i {
+    margin-left: 10px;
+    color: #a09f9f;
+}
+nav.f-menu .f-menu-3 ul li:hover,
+nav.f-menu .f-menu-3 ul li:hover i {
+    color: #f47748;
+    transition: 0.4s;
+}
+.backButton {
+    border: none;
+    display: block;
+    padding: 9PX 34PX;
+    background-color: #f47748;
+    border-radius: 6px;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    font-family: iransansdn;
+}
+
+.backButton:hover {
+    background-color: #df4848;
+    transition: .7s;
+    color: white;
+}
+
+#title:hover {
+    color: black;
+}

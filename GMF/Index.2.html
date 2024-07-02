@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title> Menu </title>
+		<link href="Style2.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/fontawesome.css">
+		<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<nav class="h-menu">
+			<ul class="h-menu-1">
+				<li>
+					<a href="javascript:void(0);">جهانی</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">ما را دنبال کنید</a>
+					<i aria-hidden="true" class="fa fa-angle-down" style="margin-top: 3px; margin-right: 3px;"></i>
+				</li>
+			</ul>
+			<ul class="h-menu-2">
+				<li>
+					<a href="javascript:void(0);">فرانسوی</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">آلمانی</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">اسپانیایی</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">پشتیبانی</a>
+				</li>
+				<li>
+					<a class="btn" href="javascript:void(0);">تماس با ما</a>
+				</li>
+			</ul>
+			<ul class="h-menu-3">
+				<li>
+					<a href="javascript:void(0);">انواع محتوا</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">موضوعات</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">خدمات</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">درباره ما</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">چه کسی را خدمت می کنیم؟</a>
+				</li>
+				<li style="list-style: none">
+					<i aria-hidden="true" class="fa fa-search"></i>
+				</li>
+			</ul>
+			<div class="h-menu-4" style="margin-left: 2em">
+				<img alt="" src="img/download%20(1).png">
+			</div>
+		</nav>
+		<main class="main">
+			<main class="main-1">
+				<article>
+					<img alt="" src="img/Picture8.png">
+					<!-- <button class="backButton" id="backButton" type="click" onclick="clickbacktemp()">برگشت به صفحه قبل</button> -->
+					<a href="javascript:void(0);">
+						<h2 id="title"> عنوان خبر </h2>
+					</a>
+					<p class="news-text" id="text"></p>
+				</article>
+			</main>
+			<main class="main-2">
+				<a href="javascript:void(0);">
+					<img alt="" src="img/Picture7.png">
+				</a>
+			</main>
+		</main>
+		</main>
+		<footer>
+			<nav class="f-menu">
+				<ul class="f-menu-1">
+					<li>
+						<a href="javascript:void(0);">
+							<img alt="" src="img/images.png">
+						</a>
+					</li>
+				</ul>
+				<div class="f-menu-2" style="margin-left: 2em">
+					<ul>
+						<li>
+							<a href="javascript:void(0);">انگلیسی</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">فرانسوی</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">آلمانی</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">اسپانیایی</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="javascript:void(0);">انواع محتوا</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">موضوعات</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">خدمات</a>
+						</li>
+					</ul>
+				</div>
+				<div class="f-menu-3" style="margin-left: 2em">
+					<h3> Follow us </h3>
+					<ul>
+						<li>
+							<a href="javascript:void(0);">
+								<i aria-hidden="true" class="fa fa-facebook"></i>
+							</a>facebook
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<i aria-hidden="true" class="fa fa-twitter"></i>
+							</a>twitter
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="javascript:void(0);">
+								<i aria-hidden="true" class="fa fa-linkedin"></i>
+							</a>linkedin
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<i aria-hidden="true" class="fa fa-youtube-play"></i>
+							</a>youtube
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</footer>
+		<script>
+			function clickbacktemp() {
+				window.location.href = 'search.html';
+			}
+			var title = sessionStorage.getItem("title");
+			var text = sessionStorage.getItem("text");
+			document.getElementById("title").textContent = title;
+			document.getElementById("text").textContent = text;
+			window.onbeforeunload = function(event) {
+				// اجرای توابع مرتبط زمانی که کاربر روی دکمه بازگشت کلیک کرد یا تلاش می‌کند ترک صفحه
+				saveData6();
+				saveData4();
+			};
+		</script>
+		<script src="jquery.js"></script>
+		<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+		<!-- در هدر صفحه HTML -->
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script> -->
+		<script src="cloudflare.js"></script>
+		<script src="Script.js"></script>
+		<script src="Script1.js"></script>
+		<script src="scriptsearch.js"></script>
+	</body>
+</html>

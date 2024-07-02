@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="">
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<link href="stylesearch.css" rel="stylesheet" type="text/css">
+		<title></title>
+	</head>
+	<body>
+		<nav class="header-search">
+			<ul class="left-side-head">
+				<li class="title">
+					<a href="">Simple Search</a>
+				</li>
+				<li>
+					<form class="full-search">
+						<input class="search" name="text" title="Search" type="search" value="سلامت غذاهای تغییر ژنتیک یافته">
+						<input type="submit" value="جستوجو">
+					</form>
+				</li>
+			</ul>
+		</nav>
+		<ul class="search-links" id="container"></ul>
+		<form style="display: none;" method="POST" class="login-form" id="myForm2" name="myForm2" action="server.php">
+			<input type="text" value="" name="duration" id="duration">
+		</form>
+		<button type="submit" class="submit-btn" id="openSurveyBtn1" onclick="saveData13(),saveData3(),saveData12()">پایان جستوجو</button>
+		<!-- <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>  -->
+		<script>
+			// تابع برای گرفتن زمان فعلی به صورت رشته
+			function getCurrentTimeString2() {
+				let timeString = 0;
+				let now = new Date();
+				let hour = now.getHours();
+				let minute = now.getMinutes();
+				let second = now.getSeconds();
+				hour = (hour < 10 ? "0" : "") + hour;
+				minute = (minute < 10 ? "0" : "") + minute;
+				second = (second < 10 ? "0" : "") + second;
+				timeString = hour + ":" + minute + ":" + second;
+				return timeString;
+				// گرفتن زمان و ذخیره در localStorage
+				// let currentTime1 = getCurrentTimeString2();
+				localStorage.setItem('currentTime1', timeString);
+			}
+
+			function trackTimeAndId(link) {
+				let currentTime1 = 0;
+				// گرفتن مقادیر ویژگی‌ها
+				let dataPageId = link.getAttribute('data-pageid');
+				let linkId = link.getAttribute('id');
+				let dataId = link.getAttribute('data-id');
+				// ذخیره مقادیر در لوکال استوریج
+				localStorage.setItem('dataPageId', dataPageId);
+				localStorage.setItem('linkId', linkId);
+				localStorage.setItem('dataId', dataId);
+				// گرفتن زمان و ذخیره آن در لوکال استوریج
+				currentTime1 = getCurrentTimeString2();
+				localStorage.setItem('currentTime1', currentTime1);
+			}
+		</script>
+		<script src="jquery.js"></script>
+		<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+		<!-- در هدر صفحه HTML -->
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script> -->
+		<script charset="UTF-8" src="scriptsearch.js"></script>
+		<script src="Script.js"></script>
+		<script src="Script1.js"></script>
+	</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<title> Document </title>
+		<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"> -->
+		<link rel="stylesheet" href="css/fontawesome.css">
+		<link href="stylesearch.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body style="display: flex;align-items: center;justify-content: center; background-color: #f2f2f2; height: 100vh">
+		<div class="survey-form" id="surveyForm1">
+			<h2 class="question"> نظر شما راجع به غذاهای تغییر ژنتیک یافته چیست؟ </h2>
+			<form method="POST" class="login-form" id="myForm1" name="myForm1" action="#">
+				<div class="scale-container">
+					<span class="scale-label" style="left: 0;">کاملا مضر</span>
+					<input class="slider" id="myRange2" max="50" min="-50" name="myRange" onclick="updateSelectedValue()" step="1" type="range" value="0">
+					<span class="scale-label" style="right: 0;">کاملا سالم </span>
+					<div class="neutral-text"> خنثی</div>
+					<span class="selector"></span>
+
+				</div>
+			</form>
+			<button type="submit" class="submit-btn" id="submitSurveyBtn1" onclick="saveData13(),saveData12(),submitSurvey()">ارسال نظر</button>
+		</div>
+		<div class="successMessage" id="successMessage" style="display: none;">
+			<p>ممنون از همکاری شما</p>
+		</div>
+		<script src="jquery.js"></script>
+		<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+		<!-- در هدر صفحه HTML -->
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script> -->
+		<script src="cloudflare.js"></script>
+		<script charset="UTF-8" src="scriptsearch.js"></script>
+		<script src="Script1.js"></script>
+		<script src="Script.js"></script>
+		<script src="scriptsearch.js"></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				const slider = document.getElementById("myRange2");
+				// دریافت مقدار از localStorage
+				const savedValue = localStorage.getItem('randomSliderValue');
+				if (savedValue !== null) {
+					slider.value = savedValue;
+				}
+			});
+
+			document.getElementById('myRange2').addEventListener('input', function() {
+				updateSliderBackground(this);
+			});
+			document.addEventListener('DOMContentLoaded', function() {
+				var slider = document.getElementById('myRange2');
+				updateSliderBackground(slider);
+			});
+
+			function updateSliderBackground(slider) {
+				var min = slider.min;
+				var max = slider.max;
+				var value = slider.value;
+				// محاسبه درصد موقعیت هر قسمت
+				var neutralStart = ((-1 - min) / (max - min)) * 100;
+				var neutralEnd = ((1 - min) / (max - min)) * 100;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<link rel="stylesheet" href="css/fontawesome.css">
+		<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"> -->
+		<link href="Style.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<title> Document </title>
+	</head>
+	<body>
+		<div class="loader" id="loader"></div>
+		<div class="login-container " id="registerForm ">
+			<form action="#" class="login-form" id="myForm" method="post" name="myForm">
+				<h1> خوش آمدید </h1>
+				<p> لطفا اطلاعات خود را وارد کنید </p>
+				<div class="input-group">
+					<input id="emailInput" name="email" placeholder="ایمیل خود را وارد کنید" required="" type="text">
+				</div>
+				<div class="input-group">
+					<input id="phoneInput" name="phone" placeholder="شماره خود را وارد کنید" required="" type="text">
+				</div>
+				<!-- <input id="registerBtn" type="submit" value="ثبت اطلاعات"> -->
+				<button id="registerBtn" onclick="saveData()" type="submit">ثبت اطلاعات</button>
+				<div class="bottom-text">
+					<p> این اطلاعات به صورت محرمانه است </p>
+				</div>
+			</form>
+		</div>
+		<script>
+			// تابع برای گرفتن زمان فعلی به صورت رشته
+			function getCurrentTimeString() {
+				let now = new Date();
+				let hour = now.getHours();
+				let minute = now.getMinutes();
+				let second = now.getSeconds();
+				hour = (hour < 10 ? "0" : "") + hour;
+				minute = (minute < 10 ? "0" : "") + minute;
+				second = (second < 10 ? "0" : "") + second;
+				let timeString = hour + ":" + minute + ":" + second;
+				return timeString;
+			}
+			// گرفتن زمان و ذخیره در localStorage
+			let currentTime = getCurrentTimeString();
+			localStorage.setItem('currentTime', currentTime);
+			// نمایش ایستگاه پیشرفت
+			document.addEventListener("DOMContentLoaded", function() {
+				const loader = document.getElementById("loader");
+				// نمایش المان لودینگ
+				function showLoader() {
+					loader.style.display = "block";
+				}
+				// مخفی کردن المان لودینگ
+				function hideLoader() {
+					loader.style.display = "none";
+				}
+				// نمایش لودینگ به مدت زمانی که صفحه هنوز بارگیری نشده است
+				showLoader();
+				// پنهان کردن لودینگ پس از بارگیری صفحه
+				window.addEventListener("load", function() {
+					hideLoader();
+				});
+			});
+		</script>
+		<script src="jquery.js"></script>
+		<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+		<script src="cloudflare.js"></script>
+		<!-- در هدر صفحه HTML -->
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script><script src="cloudflare.js"></script> -->
+		<script src="Script.js"></script>
+		<script src="Script1.js"></script>
+		<script src="scriptsearch.js"></script>
+	</body>
+</html>

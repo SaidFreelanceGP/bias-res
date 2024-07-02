@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<link rel="stylesheet" href="css/fontawesome.css">
+		<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"> -->
+		<link href="Style.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<title> Document </title>
+	</head>
+	<body>
+		<div class="page1" id="page1">
+			<p> این نظر سنجی درباره ی غذاهای تغییر ژنتیک یافته است
+				<br> غذاهای تغییر ژنتیک یافته غذاهایی هستند که از گیاهانی تولید شده‌اند که با استفاده از روش‌های مهندسی ژنتیک، تغییراتی در DNA آن‌ها ایجاد شده‌است. دیدگاه های متفاوتی مبنی بر سالم یا مضر بودن اینگونه محصولات وجود دارد. </p>
+			<button class="nextButton" id="decnextPage1">صفحه بعد</button>
+		</div>
+		<div class="survey-form" id="surveyForm" style="display: none;">
+			<h2 class="question"> نظر شما راجع به غذاهای تغییر ژنتیک یافته چیست؟ </h2>
+			<form action="#" class="login-form" id="myForm1" method="post" name="myForm1">
+				<div class="scale-container">
+					<span class="scale-label" style="left: 0;">کاملا مضر</span>
+					<input class="slider" id="myRange" max="50" min="-50" name="myRange" onclick="updateSelectedValue()" step="1" type="range" value="0">
+					<span class="scale-label" style="right: 0;">کاملا سالم </span>
+					<div class="neutral-text"> خنثی</div>
+					<span class="selector"></span>
+
+				</div>
+			</form>
+			<button class="submit-btn" id="submitSurveyBtn" onclick="" type="submit">ارسال نظر</button>
+		</div>
+		
+		<div class="page1" id="page3" style="display: none;">
+			<p>
+				در این بخش جملاتی از مقالات مختلف علمی و پژوهش های متخصصان حوزه ی تغذیه و ژنتیک جمع آوری شده است. گاهی امکان دارد دیدگاه ها در تضاد هم باشند. این جملات به دید شما درباره ی این محصولات و  تصمیم شما مبنی بر سالم یا ناسالم بودن آن کمک کند. این بخش شامل ۳۰ جمله مختلف از منابع معتبر علمی است. خواندن این جملات حدودا 3 دقیقه از شما زمان میبرد.
+	
+			</p>
+			<button class="nextButton" id="decnextPage3" onclick="clickbtn(),saveData1()">صفحه بعد</button>
+		</div>
+		<div class="textsContainer" id="textsContainer" style="display:none;">
+			<div class="text" id="text"></div>
+			<button onclick="" class="nextButton" id="nextButton">بعدی</button> <span class="remaining" id="remaining"></span>
+			<!-- <button class="prevButton" id="prevButton">قبلی</button>       -->
+		</div>
+		<div class="page1" id="page2" style="margin: inherit auto; display:none;text-align:center;">
+			<p style="padding-bottom:11px; text-align: right; font-weight: bold;">در این بخش (بخش نهایی) به شما نتایج جستجوی گوگل درباره ی این موضوع نشان داده میشود
+				<br>
+			</p>
+			<p style="text-align: right;"> لطفا نتایج را به دقت بررسی کنید و زمانی که به نتیجه ی قطعی درباره ی سلامت محصولات تغییر ژنتیک یافته رسیدید دکمه ی پایان جستوجو در انتهای صفحه را فشار دهید.  </p>
+				<p style="color: #061807;text-align: right;font-weight:500"> لطفا به نکات زیر توجه کنید:.</p>
+				<p style="color: #061807;text-align: right;font-weight:500">
+				 *این بخش محدودیت ندارد به این معنی که شما هر چقدر زمان نیاز داشتید میتوانید برای بررسی این موضوع صرف کنید و هر تعداد وبسایتی که نیاز دارید را مشاهده کنید.
+				<br> *خود جستجو انجام شده است و شما نتیجه ی جستجو را در صفحه ی مرورگر مشاهده میکنید (شما توانایی تایپ کردن در قسمت سرچ موتور جستجو را ندارید صرفا میتوانید نتایج را مشاهده کنید)
+				<br> * نتایج و لینک های مشاهده شده نتایج حقیقی موتور جستجوی گوگل درباره ی این موضوع است و نتایج از وبسایت خبرگزاری های معتبر فارسی زبان جمع آوری شده است.
+				<br> * برای جلوگیری از حواس پرتی و متمرکز ماندن درباره ی موضوع پژوهش تمامی عکس ها و اخبار و صفحات  غیر مرتبط تار شده و یا از دسترس خارج شده است 
+			</p>
+			
+				<p style="padding-top:11px;text-align: center; font-weight: bold;">
+					در صورتی که توضیحات را متوجه شده این میتوانید دکمه ی شروع را فشار دهید
+					<br>
+				</p>
+			<button style="display: inline-block; margin: inherit auto;" class="nextButton" id="decnextPage2" onclick="showLinks(),getCurrentTimeString()">شروع</button>
+		</div>
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				const slider = document.getElementById("myRange");
+				const randomValue = Math.floor(Math.random() * 101) - 50; // مقدار تصادفی بین -50 و 50
+				slider.value = randomValue;
+				// ذخیره مقدار رندوم در localStorage
+				localStorage.setItem('randomSliderValue', randomValue);
+			});
+			document.getElementById('myRange').addEventListener('input', function() {
+				updateSliderBackground(this);
+			});
+			document.addEventListener('DOMContentLoaded', function() {
+				var slider = document.getElementById('myRange');
+				updateSliderBackground(slider);
+			});
+
+			function updateSliderBackground(slider) {
+				var min = slider.min;
+				var max = slider.max;
+				var value = slider.value;
+				// محاسبه درصد موقعیت هر قسمت
+				var neutralStart = ((-1 - min) / (max - min)) * 100;
+				var neutralEnd = ((1 - min) / (max - min)) * 100;
+			}
+
+			function updateSelectedValue() {
+				// این تابع می‌تواند برای به‌روزرسانی مقادیر دیگر در صورت نیاز استفاده شود
+			}
+			// تابع برای گرفتن زمان فعلی به صورت رشته
+			function getCurrentTimeString() {
+				let now = new Date();
+				let hour = now.getHours();
+				let minute = now.getMinutes();
+				let second = now.getSeconds();
+				hour = (hour < 10 ? "0" : "") + hour;
+				minute = (minute < 10 ? "0" : "") + minute;
+				second = (second < 10 ? "0" : "") + second;
+				let timeString = hour + ":" + minute + ":" + second;
+				return timeString;
+			}
+			// گرفتن زمان و ذخیره در localStorage
+			let decnextPage2 = document.getElementById("decnextPage2");
+			decnextPage2.addEventListener("click", () => {
+				let currentTime = getCurrentTimeString();
+				localStorage.setItem('currentTime', currentTime);
+			});
+			let submitSurveyBtn1 = document.getElementById("submitSurveyBtn");
+			submitSurveyBtn1.addEventListener("click", () => {
+				document.getElementById("surveyForm").style.display = "none";
+				document.getElementById("page3").style.display = "block";
+				// const group22 = localStorage.getItem('grouprang');
+			});
+			const btn1 = document.getElementById("decnextPage1");
+			btn1.addEventListener("click", () => {
+				document.getElementById("page1").style.display = "none";
+				// getCurrentTimeString();
+				document.getElementById("surveyForm").style.display = "block";
+				let randtemp = Math.floor(Math.random() * 3) + 1; // انتخاب تصادفی از بین شماره‌های تمپلیت‌ها (1 تا 3)
+				localStorage.setItem('randtemp', randtemp);
+			});
+			const decnextPage3 = document.getElementById("decnextPage3");
+			const Page3 = document.getElementById("Page3");
+			decnextPage3.addEventListener("click", () => {
+				document.getElementById("page3").style.display = "none";
+				document.getElementById("textsContainer").style.display = "block";
+			});
+		</script>
+		<script src="jquery.js"></script>
+		<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+		<!-- در هدر صفحه HTML -->
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script> -->
+		<script src="cloudflare.js"></script>
+		<script src="Script.js"></script>
+		<script src="Script1.js"></script>
+		<script src="scriptsearch.js"></script>
+	</body>
+</html>
